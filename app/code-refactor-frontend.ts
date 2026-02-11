@@ -10,41 +10,10 @@ export class Item {
   }
 }
 
-const Product = {
-  NORMAL_ITEMS: "Normal Items",
-} as const;
-
-type ProductType = typeof Product[keyof typeof Product];
-type DeltaMap = { [K in ProductType]: (item: Item) => number; };
-
-const qualityDeltaMap: DeltaMap = {
-  [Product.NORMAL_ITEMS]: (item) => {
-    return item.sellIn >= 0 ? -1 : -2;
-  },
-};
-
-const sellInDeltaMap: DeltaMap = {
-  [Product.NORMAL_ITEMS]: (item) => -1,
-};
-
 export class CodeRefactorFrontEnd {
   items: Array<Item>;
 
-  constructor(items = [] as Array<Item>) {
-    this.items = items;
-  }
-
-  updateQuality() {
-    for (let item of this.items) {
-      const itemProxy = new Proxy(item, CodeRefactorFrontEnd.itemValidator);
-      itemProxy.quality += CodeRefactorFrontEnd.getQualityDelta(item);
-      itemProxy.sellIn += CodeRefactorFrontEnd.getSellInDelta(item);
-    }
-
-    return this.items;
-  }
-
-  private static itemValidator: ProxyHandler<Item> = {
+  private static readonly itemValidator: ProxyHandler<Item> = {
     set(target, prop, newValue) {
       if (newValue === target[prop]) return true;
 
@@ -56,6 +25,21 @@ export class CodeRefactorFrontEnd {
 
       return true;
     }
+  }
+
+  constructor(items = [] as Array<Item>) {
+    this.items = items;
+  }
+
+  updateQuality() {
+    for (let item of this.items) {
+      const itemProxy = new Proxy(item, CodeRefactorFrontEnd.itemValidator);
+
+      itemProxy.quality += CodeRefactorFrontEnd.getQualityDelta(item);
+      itemProxy.sellIn += CodeRefactorFrontEnd.getSellInDelta(item);
+    }
+
+    return this.items;
   }
 
   private static getQualityDelta(item: Item) {
@@ -82,3 +66,28 @@ class MathUtils {
     return value;
   }
 }
+
+const Product = {
+  NORMAL_ITEMS: "Normal Items",
+  VINTAGE_FRAMEWORK: "Vintage Framework",
+} as const;
+
+type ProductType = typeof Product[keyof typeof Product];
+type DeltaMap = {
+  [Product.NORMAL_ITEMS]: (item: Item) => number;
+} & {
+  [K in ProductType]?: (item: Item) => number;
+};
+
+const qualityDeltaMap: DeltaMap = {
+  [Product.NORMAL_ITEMS]: (item) => {
+    return item.sellIn >= 0 ? -1 : -2;
+  },
+  [Product.VINTAGE_FRAMEWORK]: (item) => {
+    return item.sellIn >= 0 ? 1 : 2;
+  },
+};
+
+const sellInDeltaMap: DeltaMap = {
+  [Product.NORMAL_ITEMS]: (item) => -1,
+};
