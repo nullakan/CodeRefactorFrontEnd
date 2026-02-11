@@ -41,9 +41,21 @@ describe('CodeRefactorFrontEnd', () => {
   // VINTAGE FRAMEWORK TESTLERİ
   // ============================================
   describe('Vintage Framework', () => {
-    it.todo('should increase quality as it gets older');
-    it.todo('should never have quality more than 50');
-    it.todo('should increase quality twice as fast after sellIn date');
+    it('should increase quality as it gets older', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Vintage Framework', 10, 20)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(21);
+    });
+    it('should never have quality more than 50', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Vintage Framework', 10, 50)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(50);
+    });
+    it('should increase quality twice as fast after sellIn date', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Vintage Framework', -1, 20)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(22);
+    });
   });
 
   // ============================================
