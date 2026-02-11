@@ -67,7 +67,8 @@ export const Product = {
   DEPRECATED_LIBRARY: "Deprecated Library",
 } as const;
 
-type ProductType = typeof Product[keyof typeof Product];
+export type ProductType = typeof Product[keyof typeof Product];
+
 type DeltaMap = {
   [Product.NORMAL_ITEMS]: (item: Item) => number;
 } & {

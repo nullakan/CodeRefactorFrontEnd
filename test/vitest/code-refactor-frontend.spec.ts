@@ -1,13 +1,22 @@
-import { Product, Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
+import { type ProductType, Product, Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
 
 describe('CodeRefactorFrontEnd', () => {
+  function createCrfAndUpdate(
+    productType: ProductType,
+    sellIn: number,
+    quality: number
+  ) {
+    const codeRefactor = new CodeRefactorFrontEnd(
+      [new Item(productType, sellIn, quality)]
+    );
+    return codeRefactor.updateQuality();
+  }
 
   // ============================================
   // ÖRNEK TEST - Bu testi düzeltmeniz gerekiyor
   // ============================================
   it('should decrease quality by 1 for normal items', () => {
-    const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.NORMAL_ITEMS, 10, 20)]);
-    const items = codeRefactor.updateQuality();
+    const items = createCrfAndUpdate(Product.NORMAL_ITEMS, 10, 20);
     expect(items[0].quality).toBe(19); // Bu değeri düzeltin
   });
 
@@ -16,23 +25,19 @@ describe('CodeRefactorFrontEnd', () => {
   // ============================================
   describe(Product.NORMAL_ITEMS, () => {
     it('should decrease sellIn by 1 each day', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.NORMAL_ITEMS, 10, 20)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.NORMAL_ITEMS, 10, 20);
       expect(items[0].sellIn).toBe(9);
     });
     it('should decrease quality by 1 each day', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.NORMAL_ITEMS, 10, 20)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.NORMAL_ITEMS, 10, 20);
       expect(items[0].quality).toBe(19);
     });
     it('should decrease quality twice as fast after sellIn date passes', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.NORMAL_ITEMS, -1, 20)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.NORMAL_ITEMS, -1, 20);
       expect(items[0].quality).toBe(18);
     });
     it('should never have negative quality', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.NORMAL_ITEMS, 10, 0)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.NORMAL_ITEMS, 10, 0);
       expect(items[0].quality).toBe(0);
     });
   });
@@ -42,18 +47,15 @@ describe('CodeRefactorFrontEnd', () => {
   // ============================================
   describe(Product.VINTAGE_FRAMEWORK, () => {
     it('should increase quality as it gets older', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.VINTAGE_FRAMEWORK, 10, 20)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.VINTAGE_FRAMEWORK, 10, 20);
       expect(items[0].quality).toBe(21);
     });
     it('should never have quality more than 50', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.VINTAGE_FRAMEWORK, 10, 50)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.VINTAGE_FRAMEWORK, 10, 50);
       expect(items[0].quality).toBe(50);
     });
     it('should increase quality twice as fast after sellIn date', () => {
-      const codeRefactor = new CodeRefactorFrontEnd([new Item(Product.VINTAGE_FRAMEWORK, -1, 20)]);
-      const items = codeRefactor.updateQuality();
+      const items = createCrfAndUpdate(Product.VINTAGE_FRAMEWORK, -1, 20);
       expect(items[0].quality).toBe(22);
     });
   });
