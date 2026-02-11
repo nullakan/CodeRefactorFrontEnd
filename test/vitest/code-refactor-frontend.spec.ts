@@ -3,11 +3,11 @@ import { type ProductType, Product, Item, CodeRefactorFrontEnd } from '@/code-re
 describe('CodeRefactorFrontEnd', () => {
   function createCrfAndUpdate(
     productType: ProductType,
-    sellIn: number,
-    quality: number
+    sellInStart: number,
+    qualityStart: number
   ) {
     const codeRefactor = new CodeRefactorFrontEnd(
-      [new Item(productType, sellIn, quality)]
+      [new Item(productType, sellInStart, qualityStart)]
     );
     return codeRefactor.updateQuality();
   }
@@ -64,9 +64,18 @@ describe('CodeRefactorFrontEnd', () => {
   // ETERNAL CODE LICENSE TESTLERİ
   // ============================================
   describe(Product.ETERNAL_CODE_LICENSE, () => {
-    it.todo('should never decrease in quality');
-    it.todo('should never change sellIn value');
-    it.todo('should always have quality of 80');
+    it('should never decrease in quality', () => {
+      const items = createCrfAndUpdate(Product.ETERNAL_CODE_LICENSE, 10, 80);
+      expect(items[0].quality).toBe(80);
+    });
+    it('should never change sellIn value', () => {
+      const items = createCrfAndUpdate(Product.ETERNAL_CODE_LICENSE, 10, 80);
+      expect(items[0].sellIn).toBe(10);
+    });
+    it('should always have quality of 80', () => {
+      const items = createCrfAndUpdate(Product.ETERNAL_CODE_LICENSE, 10, 20);
+      expect(items[0].quality).toBe(80);
+    });
   });
 
   // ============================================
