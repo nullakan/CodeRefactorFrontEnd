@@ -7,6 +7,7 @@ Bu proje, yazılım geliştirici adayları için hazırlanmış bir kod refactor
 Bu projede bir envanter yönetim sistemi bulunmaktadır. `CodeRefactorFrontEnd` sınıfı, farklı ürünlerin kalite ve satış süresi (sellIn) değerlerini günlük olarak güncellemektedir.
 
 **Sizden beklenen:**
+
 1. Mevcut kodu anlamak
 2. Kodu daha okunabilir ve sürdürülebilir hale getirmek (refactor)
 3. Yeni özellik eklemek: **"Deprecated Library"** desteği
@@ -19,6 +20,7 @@ Bu projede bir envanter yönetim sistemi bulunmaktadır. `CodeRefactorFrontEnd` 
 Sistemdeki tüm ürünler için geçerli kurallar:
 
 ### Genel Kurallar
+
 - Her gün `sellIn` değeri 1 azalır
 - Her gün `quality` değeri 1 azalır
 - `sellIn` tarihi geçtikten sonra `quality` **2 kat hızlı** azalır
@@ -27,10 +29,10 @@ Sistemdeki tüm ürünler için geçerli kurallar:
 
 ### Özel Ürünler
 
-| Ürün Adı | Özel Davranış |
-|----------|---------------|
-| **Vintage Framework** | Zamanla kalitesi **artar** (eskidikçe değerlenir) |
-| **Eternal Code License** | Asla satılmaz, kalitesi **hiç değişmez** (her zaman 80) |
+| Ürün Adı                             | Özel Davranış                                                                                                                           |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Vintage Framework**                | Zamanla kalitesi **artar** (eskidikçe değerlenir)                                                                                       |
+| **Eternal Code License**             | Asla satılmaz, kalitesi **hiç değişmez** (her zaman 80)                                                                                 |
 | **Conference Pass for DevDays 2025** | Etkinliğe yaklaştıkça değeri artar: <br>• 10 gün kala: +2 kalite/gün <br>• 5 gün kala: +3 kalite/gün <br>• Etkinlik sonrası: kalite = 0 |
 
 ### 🆕 Yeni Özellik: Deprecated Library
@@ -56,21 +58,25 @@ npm install
 ### Testleri Çalıştırma
 
 Jest ile:
+
 ```sh
 npm run test:jest
 ```
 
 Watch modunda:
+
 ```sh
 npm run test:jest:watch
 ```
 
 Vitest ile:
+
 ```sh
 npm run test:vitest
 ```
 
 Mocha ile:
+
 ```sh
 npm run test:mocha
 ```
@@ -82,6 +88,7 @@ npx ts-node test/golden-master-text-test.ts
 ```
 
 Belirli gün sayısı ile:
+
 ```sh
 npx ts-node test/golden-master-text-test.ts 10
 ```
@@ -122,5 +129,3 @@ npx ts-node test/golden-master-text-test.ts 10
 ```
 
 Başarılar! 🍀
-
-

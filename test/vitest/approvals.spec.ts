@@ -1,5 +1,5 @@
-import { execSync } from 'node:child_process';
-import { Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
+import { execSync } from "node:child_process";
+import { Item, CodeRefactorFrontEnd } from "@/code-refactor-frontend";
 
 /**
  * This test uses Vitest Snapshot, similar to [Jest Snapshot](https://goo.gl/fbAQLP).
@@ -11,18 +11,18 @@ import { Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
  * I suggest choosing one style to develop and deleting the other.
  */
 
-describe('CodeRefactorFrontEnd Approval', () => {
-  it('should foo', () => {
-    const codeRefactor = new CodeRefactorFrontEnd([new Item('foo', 0, 0)]);
+describe("CodeRefactorFrontEnd Approval", () => {
+  it("should foo", () => {
+    const codeRefactor = new CodeRefactorFrontEnd([new Item("foo", 0, 0)]);
     const items = codeRefactor.updateQuality();
 
     expect(items).toMatchSnapshot();
   });
 
-  it('should thirtyDays', () => {
+  it("should thirtyDays", () => {
     const consoleOutput = execSync(
-      'ts-node test/golden-master-text-test.ts 30',
-      { encoding: 'utf-8' }
+      "ts-node test/golden-master-text-test.ts 30",
+      { encoding: "utf-8" },
     );
 
     expect(consoleOutput).toMatchSnapshot();

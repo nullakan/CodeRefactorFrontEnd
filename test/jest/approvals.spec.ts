@@ -1,4 +1,4 @@
-import { Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
+import { Item, CodeRefactorFrontEnd } from "@/code-refactor-frontend";
 
 /**
  * This unit test uses [Jest Snapshot](https://goo.gl/fbAQLP).
@@ -10,11 +10,10 @@ import { Item, CodeRefactorFrontEnd } from '@/code-refactor-frontend';
  * I suggest choosing one style to develop and deleting the other.
  */
 
-describe('CodeRefactorFrontEnd Approval', () => {
-
+describe("CodeRefactorFrontEnd Approval", () => {
   let gameConsoleOutput: string;
   let originalConsoleLog: (message: any) => void;
-  let originalProcessArgv: string[]
+  let originalProcessArgv: string[];
 
   function gameConsoleLog(msg: string) {
     if (msg) {
@@ -37,18 +36,17 @@ describe('CodeRefactorFrontEnd Approval', () => {
     process.argv = originalProcessArgv;
   });
 
-  it('should foo', () => {
-    const codeRefactor = new CodeRefactorFrontEnd([new Item('foo', 0, 0)]);
+  it("should foo", () => {
+    const codeRefactor = new CodeRefactorFrontEnd([new Item("foo", 0, 0)]);
     const items = codeRefactor.updateQuality();
 
     expect(items).toMatchSnapshot();
   });
 
-  it('should thirtyDays', () => {
+  it("should thirtyDays", () => {
     process.argv = ["<node>", "<script", "30"];
-    require('../golden-master-text-test.ts');
+    require("../golden-master-text-test.ts");
 
     expect(gameConsoleOutput).toMatchSnapshot();
   });
-
 });

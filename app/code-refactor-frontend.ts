@@ -24,8 +24,8 @@ export class CodeRefactorFrontEnd {
       }
 
       return true;
-    }
-  }
+    },
+  };
 
   constructor(items = [] as Array<Item>) {
     this.items = items;
@@ -67,7 +67,7 @@ export const Product = {
   DEPRECATED_LIBRARY: "Deprecated Library",
 } as const;
 
-export type ProductType = typeof Product[keyof typeof Product];
+export type ProductType = (typeof Product)[keyof typeof Product];
 
 type DeltaMap = {
   [Product.NORMAL_ITEMS]: (item: Item) => number;
@@ -93,7 +93,7 @@ const qualityDeltaMap: DeltaMap = {
   },
   [Product.DEPRECATED_LIBRARY]: (item) => {
     return item.sellIn >= 0 ? -2 : -4;
-  }
+  },
 };
 
 const sellInDeltaMap: DeltaMap = {
