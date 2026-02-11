@@ -15,10 +15,26 @@ describe('CodeRefactorFrontEnd', () => {
   // NORMAL ÜRÜN TESTLERİ
   // ============================================
   describe('Normal Items', () => {
-    it.todo('should decrease sellIn by 1 each day');
-    it.todo('should decrease quality by 1 each day');
-    it.todo('should decrease quality twice as fast after sellIn date passes');
-    it.todo('should never have negative quality');
+    it('should decrease sellIn by 1 each day', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Normal Item', 10, 20)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].sellIn).toBe(9);
+    });
+    it('should decrease quality by 1 each day', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Normal Item', 10, 20)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(19);
+    });
+    it('should decrease quality twice as fast after sellIn date passes', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Normal Item', -1, 20)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(18);
+    });
+    it('should never have negative quality', () => {
+      const codeRefactor = new CodeRefactorFrontEnd([new Item('Normal Item', 10, 0)]);
+      const items = codeRefactor.updateQuality();
+      expect(items[0].quality).toBe(0);
+    });
   });
 
   // ============================================
