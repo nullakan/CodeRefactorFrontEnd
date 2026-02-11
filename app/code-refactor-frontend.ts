@@ -17,7 +17,7 @@ export class CodeRefactorFrontEnd {
     set(target, prop, newValue) {
       if (newValue === target[prop]) return true;
 
-      if (prop === "quality") {
+      if (prop === "quality" && target.name !== Product.ETERNAL_CODE_LICENSE) {
         target.quality = MathUtils.clamp(newValue, 0, 50);
       } else {
         target[prop] = newValue;
@@ -82,10 +82,14 @@ const qualityDeltaMap: DeltaMap = {
   [Product.VINTAGE_FRAMEWORK]: (item) => {
     return item.sellIn >= 0 ? 1 : 2;
   },
+  [Product.ETERNAL_CODE_LICENSE]: (item) => {
+    return 80 - item.quality;
+  }
 };
 
 const sellInDeltaMap: DeltaMap = {
   [Product.NORMAL_ITEMS]: (item) => -1,
+  [Product.ETERNAL_CODE_LICENSE]: (item) => 0,
 };
 
 class MathUtils {
