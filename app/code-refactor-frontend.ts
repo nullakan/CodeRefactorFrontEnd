@@ -84,6 +84,12 @@ const qualityDeltaMap: DeltaMap = {
   },
   [Product.ETERNAL_CODE_LICENSE]: (item) => {
     return 80 - item.quality;
+  },
+  [Product.CONFERENCE_PASS_2025]: (item) => {
+    if (item.sellIn < 0) return 0 - item.quality;
+    if (item.sellIn < 6) return 3;
+    if (item.sellIn < 11) return 2;
+    return 1;
   }
 };
 
