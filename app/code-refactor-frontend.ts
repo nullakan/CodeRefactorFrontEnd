@@ -59,17 +59,12 @@ export class CodeRefactorFrontEnd {
   }
 }
 
-class MathUtils {
-  static clamp(value: number, min: number, max: number) {
-    if (value < min) return min;
-    if (value > max) return max;
-    return value;
-  }
-}
-
-const Product = {
+export const Product = {
   NORMAL_ITEMS: "Normal Items",
   VINTAGE_FRAMEWORK: "Vintage Framework",
+  ETERNAL_CODE_LICENSE: "Eternal Code License",
+  CONFERENCE_PASS_2025: "Conference Pass for DevDays 2025",
+  DEPRECATED_LIBRARY: "Deprecated Library",
 } as const;
 
 type ProductType = typeof Product[keyof typeof Product];
@@ -91,3 +86,11 @@ const qualityDeltaMap: DeltaMap = {
 const sellInDeltaMap: DeltaMap = {
   [Product.NORMAL_ITEMS]: (item) => -1,
 };
+
+class MathUtils {
+  static clamp(value: number, min: number, max: number) {
+    if (value < min) return min;
+    if (value > max) return max;
+    return value;
+  }
+}
