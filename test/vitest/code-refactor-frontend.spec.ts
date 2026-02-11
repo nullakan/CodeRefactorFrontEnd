@@ -108,9 +108,18 @@ describe('CodeRefactorFrontEnd', () => {
   // DEPRECATED LIBRARY TESTLERİ (YENİ ÖZELLİK)
   // ============================================
   describe(Product.DEPRECATED_LIBRARY, () => {
-    it.todo('should decrease quality twice as fast as normal items');
-    it.todo('should decrease quality 4x as fast after sellIn date');
-    it.todo('should never have negative quality');
+    it('should decrease quality twice as fast as normal items', () => {
+      const items = createCrfAndUpdate(Product.DEPRECATED_LIBRARY, 10, 20);
+      expect(items[0].quality).toBe(18);
+    });
+    it('should decrease quality 4x as fast after sellIn date', () => {
+      const items = createCrfAndUpdate(Product.DEPRECATED_LIBRARY, -1, 20);
+      expect(items[0].quality).toBe(16);
+    });
+    it('should never have negative quality', () => {
+      const items = createCrfAndUpdate(Product.DEPRECATED_LIBRARY, -1, 0);
+      expect(items[0].quality).toBe(0);
+    });
   });
 
 });
