@@ -8,7 +8,7 @@ describe('CodeRefactorFrontEnd', () => {
   it('should decrease quality by 1 for normal items', () => {
     const codeRefactor = new CodeRefactorFrontEnd([new Item('Normal Item', 10, 20)]);
     const items = codeRefactor.updateQuality();
-    expect(items[0].quality).toBe('fixme'); // Bu değeri düzeltin
+    expect(items[0].quality).toBe(19); // Bu değeri düzeltin
   });
 
   // ============================================
