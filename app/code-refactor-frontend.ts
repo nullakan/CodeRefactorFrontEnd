@@ -90,6 +90,9 @@ const qualityDeltaMap: DeltaMap = {
     if (item.sellIn < 6) return 3;
     if (item.sellIn < 11) return 2;
     return 1;
+  },
+  [Product.DEPRECATED_LIBRARY]: (item) => {
+    return item.sellIn >= 0 ? -2 : -4;
   }
 };
 

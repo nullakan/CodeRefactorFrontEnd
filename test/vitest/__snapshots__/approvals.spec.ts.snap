@@ -34,7 +34,7 @@ Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 14, 21
 Conference Pass for DevDays 2025, 9, 50
 Conference Pass for DevDays 2025, 4, 50
-Deprecated Library, 2, 5
+Deprecated Library, 2, 4
 
 -------- day 2 --------
 name, sellIn, quality
@@ -46,36 +46,36 @@ Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 13, 22
 Conference Pass for DevDays 2025, 8, 50
 Conference Pass for DevDays 2025, 3, 50
-Deprecated Library, 1, 4
+Deprecated Library, 1, 2
 
 -------- day 3 --------
 name, sellIn, quality
 +5 Dexterity Vest, 7, 17
-Vintage Framework, -1, 4
+Vintage Framework, -1, 3
 Elixir of the Mongoose, 2, 4
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 12, 23
 Conference Pass for DevDays 2025, 7, 50
 Conference Pass for DevDays 2025, 2, 50
-Deprecated Library, 0, 3
+Deprecated Library, 0, 0
 
 -------- day 4 --------
 name, sellIn, quality
 +5 Dexterity Vest, 6, 16
-Vintage Framework, -2, 6
+Vintage Framework, -2, 5
 Elixir of the Mongoose, 1, 3
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 11, 24
 Conference Pass for DevDays 2025, 6, 50
 Conference Pass for DevDays 2025, 1, 50
-Deprecated Library, -1, 1
+Deprecated Library, -1, 0
 
 -------- day 5 --------
 name, sellIn, quality
 +5 Dexterity Vest, 5, 15
-Vintage Framework, -3, 8
+Vintage Framework, -3, 7
 Elixir of the Mongoose, 0, 2
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -87,19 +87,19 @@ Deprecated Library, -2, 0
 -------- day 6 --------
 name, sellIn, quality
 +5 Dexterity Vest, 4, 14
-Vintage Framework, -4, 10
-Elixir of the Mongoose, -1, 0
+Vintage Framework, -4, 9
+Elixir of the Mongoose, -1, 1
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 9, 27
 Conference Pass for DevDays 2025, 4, 50
-Conference Pass for DevDays 2025, -1, 0
+Conference Pass for DevDays 2025, -1, 50
 Deprecated Library, -3, 0
 
 -------- day 7 --------
 name, sellIn, quality
 +5 Dexterity Vest, 3, 13
-Vintage Framework, -5, 12
+Vintage Framework, -5, 11
 Elixir of the Mongoose, -2, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -111,7 +111,7 @@ Deprecated Library, -4, 0
 -------- day 8 --------
 name, sellIn, quality
 +5 Dexterity Vest, 2, 12
-Vintage Framework, -6, 14
+Vintage Framework, -6, 13
 Elixir of the Mongoose, -3, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -123,7 +123,7 @@ Deprecated Library, -5, 0
 -------- day 9 --------
 name, sellIn, quality
 +5 Dexterity Vest, 1, 11
-Vintage Framework, -7, 16
+Vintage Framework, -7, 15
 Elixir of the Mongoose, -4, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -135,7 +135,7 @@ Deprecated Library, -6, 0
 -------- day 10 --------
 name, sellIn, quality
 +5 Dexterity Vest, 0, 10
-Vintage Framework, -8, 18
+Vintage Framework, -8, 17
 Elixir of the Mongoose, -5, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -146,20 +146,20 @@ Deprecated Library, -7, 0
 
 -------- day 11 --------
 name, sellIn, quality
-+5 Dexterity Vest, -1, 8
-Vintage Framework, -9, 20
++5 Dexterity Vest, -1, 9
+Vintage Framework, -9, 19
 Elixir of the Mongoose, -6, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
 Conference Pass for DevDays 2025, 4, 38
-Conference Pass for DevDays 2025, -1, 0
+Conference Pass for DevDays 2025, -1, 50
 Conference Pass for DevDays 2025, -6, 0
 Deprecated Library, -8, 0
 
 -------- day 12 --------
 name, sellIn, quality
-+5 Dexterity Vest, -2, 6
-Vintage Framework, -10, 22
++5 Dexterity Vest, -2, 7
+Vintage Framework, -10, 21
 Elixir of the Mongoose, -7, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -170,8 +170,8 @@ Deprecated Library, -9, 0
 
 -------- day 13 --------
 name, sellIn, quality
-+5 Dexterity Vest, -3, 4
-Vintage Framework, -11, 24
++5 Dexterity Vest, -3, 5
+Vintage Framework, -11, 23
 Elixir of the Mongoose, -8, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -182,8 +182,8 @@ Deprecated Library, -10, 0
 
 -------- day 14 --------
 name, sellIn, quality
-+5 Dexterity Vest, -4, 2
-Vintage Framework, -12, 26
++5 Dexterity Vest, -4, 3
+Vintage Framework, -12, 25
 Elixir of the Mongoose, -9, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -194,8 +194,8 @@ Deprecated Library, -11, 0
 
 -------- day 15 --------
 name, sellIn, quality
-+5 Dexterity Vest, -5, 0
-Vintage Framework, -13, 28
++5 Dexterity Vest, -5, 1
+Vintage Framework, -13, 27
 Elixir of the Mongoose, -10, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -207,11 +207,11 @@ Deprecated Library, -12, 0
 -------- day 16 --------
 name, sellIn, quality
 +5 Dexterity Vest, -6, 0
-Vintage Framework, -14, 30
+Vintage Framework, -14, 29
 Elixir of the Mongoose, -11, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
-Conference Pass for DevDays 2025, -1, 0
+Conference Pass for DevDays 2025, -1, 50
 Conference Pass for DevDays 2025, -6, 0
 Conference Pass for DevDays 2025, -11, 0
 Deprecated Library, -13, 0
@@ -219,7 +219,7 @@ Deprecated Library, -13, 0
 -------- day 17 --------
 name, sellIn, quality
 +5 Dexterity Vest, -7, 0
-Vintage Framework, -15, 32
+Vintage Framework, -15, 31
 Elixir of the Mongoose, -12, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -231,7 +231,7 @@ Deprecated Library, -14, 0
 -------- day 18 --------
 name, sellIn, quality
 +5 Dexterity Vest, -8, 0
-Vintage Framework, -16, 34
+Vintage Framework, -16, 33
 Elixir of the Mongoose, -13, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -243,7 +243,7 @@ Deprecated Library, -15, 0
 -------- day 19 --------
 name, sellIn, quality
 +5 Dexterity Vest, -9, 0
-Vintage Framework, -17, 36
+Vintage Framework, -17, 35
 Elixir of the Mongoose, -14, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -255,7 +255,7 @@ Deprecated Library, -16, 0
 -------- day 20 --------
 name, sellIn, quality
 +5 Dexterity Vest, -10, 0
-Vintage Framework, -18, 38
+Vintage Framework, -18, 37
 Elixir of the Mongoose, -15, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -267,7 +267,7 @@ Deprecated Library, -17, 0
 -------- day 21 --------
 name, sellIn, quality
 +5 Dexterity Vest, -11, 0
-Vintage Framework, -19, 40
+Vintage Framework, -19, 39
 Elixir of the Mongoose, -16, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -279,7 +279,7 @@ Deprecated Library, -18, 0
 -------- day 22 --------
 name, sellIn, quality
 +5 Dexterity Vest, -12, 0
-Vintage Framework, -20, 42
+Vintage Framework, -20, 41
 Elixir of the Mongoose, -17, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -291,7 +291,7 @@ Deprecated Library, -19, 0
 -------- day 23 --------
 name, sellIn, quality
 +5 Dexterity Vest, -13, 0
-Vintage Framework, -21, 44
+Vintage Framework, -21, 43
 Elixir of the Mongoose, -18, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -303,7 +303,7 @@ Deprecated Library, -20, 0
 -------- day 24 --------
 name, sellIn, quality
 +5 Dexterity Vest, -14, 0
-Vintage Framework, -22, 46
+Vintage Framework, -22, 45
 Elixir of the Mongoose, -19, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -315,7 +315,7 @@ Deprecated Library, -21, 0
 -------- day 25 --------
 name, sellIn, quality
 +5 Dexterity Vest, -15, 0
-Vintage Framework, -23, 48
+Vintage Framework, -23, 47
 Elixir of the Mongoose, -20, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
@@ -327,7 +327,7 @@ Deprecated Library, -22, 0
 -------- day 26 --------
 name, sellIn, quality
 +5 Dexterity Vest, -16, 0
-Vintage Framework, -24, 50
+Vintage Framework, -24, 49
 Elixir of the Mongoose, -21, 0
 Eternal Code License, 0, 80
 Eternal Code License, -1, 80
