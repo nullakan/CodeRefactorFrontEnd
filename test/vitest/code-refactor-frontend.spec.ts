@@ -82,11 +82,26 @@ describe('CodeRefactorFrontEnd', () => {
   // CONFERENCE PASS TESTLERİ
   // ============================================
   describe(Product.CONFERENCE_PASS_2025, () => {
-    it.todo('should increase quality by 1 when more than 10 days left');
-    it.todo('should increase quality by 2 when 10 days or less left');
-    it.todo('should increase quality by 3 when 5 days or less left');
-    it.todo('should drop quality to 0 after the conference');
-    it.todo('should never have quality more than 50');
+    it('should increase quality by 1 when more than 10 days left', () => {
+      const items = createCrfAndUpdate(Product.CONFERENCE_PASS_2025, 11, 20);
+      expect(items[0].quality).toBe(21);
+    });
+    it('should increase quality by 2 when 10 days or less left', () => {
+      const items = createCrfAndUpdate(Product.CONFERENCE_PASS_2025, 10, 20);
+      expect(items[0].quality).toBe(22);
+    });
+    it('should increase quality by 3 when 5 days or less left', () => {
+      const items = createCrfAndUpdate(Product.CONFERENCE_PASS_2025, 5, 20);
+      expect(items[0].quality).toBe(23);
+    });
+    it('should drop quality to 0 after the conference', () => {
+      const items = createCrfAndUpdate(Product.CONFERENCE_PASS_2025, -1, 20);
+      expect(items[0].quality).toBe(0);
+    });
+    it('should never have quality more than 50', () => {
+      const items = createCrfAndUpdate(Product.CONFERENCE_PASS_2025, 5, 50);
+      expect(items[0].quality).toBe(50);
+    });
   });
 
   // ============================================
